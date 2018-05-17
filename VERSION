@@ -1,8 +1,8 @@
 {
   "code": 0,
-  "version": "0.4.41",
-  "build": "363",
-  "notes": "升级 lwip 到 2.0.3 版本以修复tcp连接中可能存在的内存泄漏",
-  "url": "https://github.com/langyanduan/Reborn/releases/download/0.4.41/Reborn.zip",
+  "version": "0.4.51",
+  "build": "392",
+  "notes": "fix KSCrash memory leak. fix bug in parser.",
+  "url": "https://github.com/langyanduan/Reborn/releases/download/0.4.51/Reborn.zip",
   "force": false
 }
