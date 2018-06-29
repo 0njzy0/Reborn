@@ -1,7 +1,5 @@
 # 配置详解
 
-## 简单说明一下
-
 配置具体可以一下几块：
 
 * 常规配置: GENERAL
@@ -203,7 +201,7 @@ GROUP, DOMAIN, china500, DIRECT
 # 使用规则组 ad, 该组内的域名(域名后缀匹配)拒绝连接
 GROUP, DOMAIN-SUFFIX, ad, REJECT
 
-# 进程名为 ss-local 的进程使用直接规则
+# 进程名为 ss-local 的进程使用直接规则
 PROCESS, ss-local, DIRECT
 
 # ip 识别结果为中国的使用直连规则
