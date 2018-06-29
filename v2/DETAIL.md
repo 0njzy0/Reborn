@@ -30,7 +30,7 @@
 
 * 命名代理  
   `DIRECT`、`REJECT`、`PROXY` 为保留关键字，不允许作为名称。  
-  比如定义一个名为 `us` 的代理服务器，可以按照如下格式：
+  比如定义一个名为 `us` 的代理服务器，可以按照如下格式：
 
       [PROXY.us]
 
@@ -90,12 +90,12 @@
 
 
 
-### 路由规则, 适用于 [RULES] 和 [DNS-RULES]
+### 路由规则
 
-一行表示一条规则，格式如下  
+适用于 `[RULES]` 和 `[DNS-RULES]`，一行表示一条规则，格式如下  
 
 * [组策略], 规则类型, 规则内容, 路由策略
-* FINAL, 路由策略 
+* FINAL, 路由策略. 当所有规则都不匹配时，由这条规则觉得使用哪种策略建立连接
 
 #### 组策略 - 可选项
 
@@ -123,17 +123,19 @@
 * PROXY
 * 服务器名，具体就是指 `[PROXY.us]` 中的 `us`  
 
-      DOMAIN, qq.com, DIRECT
-      DOMAIN-SUFFIX, ad.google.com, REJECT
-      IP-CIDR, 114.114.114.114, DIRECT
-      IP-CIDR, 119.29.29.0/24, DIRECT
+示例:
 
-      GROUP, DOMAIN, china500, DIRECT
-      GROUP, DOMAIN-SUFFIX, google-list, PROXY
-      GROUP, IP-CIDR, chinaip, DIRECT
+    DOMAIN, qq.com, DIRECT
+    DOMAIN-SUFFIX, ad.google.com, REJECT
+    IP-CIDR, 114.114.114.114, DIRECT
+    IP-CIDR, 119.29.29.0/24, DIRECT
 
-      GEOIP, CN, DIRECT
-      FINAL, PROXY
+    GROUP, DOMAIN, china500, DIRECT
+    GROUP, DOMAIN-SUFFIX, google-list, PROXY
+    GROUP, IP-CIDR, chinaip, DIRECT
+
+    GEOIP, CN, DIRECT
+    FINAL, PROXY
 
 ### DNS 配置
 

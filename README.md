@@ -1,6 +1,6 @@
 # Reborn
 
-如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./v1/discarded/README.md)
+如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./discarded/v1/README.md)
 
 ## 功能介绍
 
