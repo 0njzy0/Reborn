@@ -1,16 +1,15 @@
 # 配置详解
 
-配置具体可以一下几块：
+配置具体分为以下几种：
 
 * 常规配置: GENERAL
-* 代理服务器: PROXY
-* 命名代理服务器: PROXY.proxyname
-* 路由规则: RULES
-* DNS 配置: DNS
-* DNS 查询规则: DNS-RULES
+* 代理服务器配置: PROXY 和 PROXY.proxyname
+* DNS 服务器配置: DNS
+* 路由规则: RULES 和 DNS-RULES
 * 规则组: GROUP.groupname
 * 规则文件: FILE.filename
 
+除进行域名匹配以外，配置文件大小写敏感。
 
 关于系统的网络配置问题。reborn 启动的时候会创建一个独立网络服务，之后的DNS、系统代理会配置在该服务上，不会影响到其他的服务。
 
@@ -93,7 +92,7 @@
 适用于 `[RULES]` 和 `[DNS-RULES]`，一行表示一条规则，格式如下  
 
 * [组策略], 规则类型, 规则内容, 路由策略
-* FINAL, 路由策略. 当所有规则都不匹配时，由这条规则觉得使用哪种策略建立连接
+* FINAL, 路由策略. 当所有规则都不匹配时，将使用 FINAL 定义的路由策略
 
 #### 组策略 - 可选项
 
@@ -106,7 +105,7 @@
 * DOMAIN-SUFFIX: 域名后缀
 * PROCESS: 进程名
 * IP-CIDR: IP 地址/IP 地址段
-* GEOIP: 区域名
+* GEOIP: 国家名
 
 #### 规则内容
 
@@ -160,10 +159,15 @@
 ```
 # 定义默认代理服务器
 [PROXY]
+# 定义代理服务器类型
 type = shadowsocks
+# 服务器，可使用域名或者ip地址
 server = yourserver.com
+# 端口号
 port = 8388
+# 算法
 method = rc4-md5
+# 密码
 password = 12345678
 
 # 定义一个局域网中的 socks5 代理，名为 local
@@ -213,13 +217,17 @@ GEOIP, US, us
 FINAL, PROXY
 
 [DNS-RULES]
+# 查询域名的后缀匹配到 google.com 时，使用 PROXY 代理服务器向远程 dns 服务器查询域名地址
+DOMAIN-SUFFIX, google.com, PROXY
 # 当本地 dns 服务器解析出来的 ip 在 dns-pollution 组内时
 # 使用代理服务器重新解析域名
 GROUP, IP-CIDR, dns-pollution, PROXY
 
 # 当本地 dns 服务器解析出的 ip 为中国 ip 时，直接使用该结果，不在用远程 dns 服务器重新解析
 GEOIP, CN, DIRECT
+# 当本地 dns 服务器解析出的 ip 为美国 ip 时，使用 us 代理向远程 dns 服务器重新解析域名
 GEOIP, US, us
+# 未比配到上述规则，使用 PROXY 代理服务器向远程 dns 服务器查询域名地址
 FINAL, PROXY
 
 [GROUP.chinaip]

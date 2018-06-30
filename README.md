@@ -1,6 +1,6 @@
 # Reborn
 
-如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./discarded/v1/README.md)
+**如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./discarded/v1/README.md)**
 
 ## 功能介绍
 
@@ -11,9 +11,31 @@ Reborn 是一款 macOS 上的透明代理
 * DNS 解析对 CDN 友好
 * 可以查看所有经过 Reborn 转发的连接
 
+
+## 流量监控功能
+
+状态栏显示实时网速
+
+![statusbar](./image/1.png)
+
+
+打开 Dashboard 查看统计信息
+
+![server](./image/2.png)
+
+流量统计
+
+![server](./image/4.png)
+
+
+当前活跃连接
+
+![active](./image/3.png)
+
+
 ## 注意事项
 
-配置规则仓库下有个模版文件，大概看看就能看懂了，配置文件放到 Profiles 目录下就好了。
+配置规则仓库下有个[模版文件](./v2/template.conf)，大概看看就能看懂了，配置文件放到 Profiles 目录下就好了。
 
 如果将`reborn`作为前端配合其他工具使用，则需要对其他工具配置进程规则。
 
@@ -109,5 +131,5 @@ PROCESS, ss-local, DIRECT
 ## 后续计划
 
 * simple-obfs  
-* 流量统计  
+* v2ray 等协议支持
 ...
