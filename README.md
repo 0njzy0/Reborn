@@ -13,22 +13,16 @@ Reborn 是一款 macOS 上的透明代理
 
 ## 流量监控功能
 
-状态栏显示实时网速
+流量监控功能默认关闭，如果需要开启，请在 Preferences 中打开相应的设置  
+![perferences](./image/5.png)
 
+* 状态栏显示实时网速  
 ![statusbar](./image/1.png)
-
-
-打开 Dashboard 查看统计信息
-
+* Dashboard 查看统计信息  
 ![server](./image/2.png)
-
-流量统计
-
+* 流量统计  
 ![server](./image/4.png)
-
-
-当前活跃连接
-
+* 当前活跃连接  
 ![active](./image/3.png)
 
 
@@ -122,6 +116,10 @@ PROCESS, ss-local, DIRECT
 ### 4. 使用 iPhone 的个人热点并以 USB 方式连接电脑, 会造成个人热点以规律的方式连接断开
 
 把 *系统偏好设置-网络-iPhone USB* 中的 *除非需要，否则请停用* 勾去掉
+
+### 5. 卸载
+
+执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
 * 0.5.31  
