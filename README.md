@@ -122,6 +122,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.4  
+支持配置状态栏样式，修复解析配置bug
 * 0.5.31  
 状态栏显示实时网速，Dashboard 支持流量统计、连接记录等功能
 
