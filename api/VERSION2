@@ -1,8 +1,8 @@
 {
   "code": 0,
-  "version": "0.5.4",
-  "build": "542",
-  "notes": "1. Support for configuring status bar styles\n2. Fix crashes and improve performance.",
-  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.4/Reborn.zip",
+  "version": "0.5.41",
+  "build": "551",
+  "notes": "1. Load system hosts file\n2. Fix crashes and improve performance.",
+  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.41/Reborn.zip",
   "force": false
 }
