@@ -122,6 +122,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.45  
+支持查看 UDP 连接详情，优化性能并修复了一些 bug
 * 0.5.41  
 现在会从系统读取 hosts 文件，修复解析配置bug
 * 0.5.4  
