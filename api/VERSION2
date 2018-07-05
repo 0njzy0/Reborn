@@ -4,5 +4,5 @@
   "build": "564",
   "notes": "1. Show udp peer information\n2. Add recently completed list\n3. Fix crashes and improve performance",
   "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.45/Reborn.zip",
-  "force": false
+  "force": true
 }
