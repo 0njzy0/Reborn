@@ -26,8 +26,8 @@ Reborn 是一款 macOS 上的透明代理
 ![server](./image/6.png)
 * 服务器流量统计  
 ![server](./image/1.png)
-* 查看连接信息
-  - 当前活跃连接  
+* 查看连接信息
+  - 当前活跃连接  
     ![active](./image/2.png)
   - 最近完成的连接
   - 所有连接信息
