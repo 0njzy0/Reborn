@@ -13,17 +13,24 @@ Reborn 是一款 macOS 上的透明代理
 
 ## 流量监控功能
 
-流量监控功能默认关闭，如果需要开启，请在 Preferences 中打开相应的设置  
+流量监控功能默认关闭，如果需要开启，请在 Preferences 中打开相应的设置。  
+可以设置是否进行网络信息统计、是否在状态栏显示实时网速、状态栏是否使用窄模式。  
 ![perferences](./image/5.png)
 
+
+
 * 状态栏显示实时网速  
-![statusbar](./image/1.png)
+  - 宽模式 ![statusbar](./image/4.png) 
+  - 窄模式 ![statusbar](./image/3.png)
 * Dashboard 查看统计信息  
-![server](./image/2.png)
-* 流量统计  
-![server](./image/4.png)
-* 当前活跃连接  
-![active](./image/3.png)
+![server](./image/6.png)
+* 服务器流量统计  
+![server](./image/1.png)
+* 查看连接信息
+  - 当前活跃连接  
+    ![active](./image/2.png)
+  - 最近完成的连接
+  - 所有连接信息
 
 
 ## 注意事项
@@ -122,6 +129,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.47  
+优化 Dashboard 显示的统计信息
 * 0.5.45  
 支持查看 UDP 连接详情，优化性能并修复了一些 bug
 * 0.5.41  
