@@ -74,12 +74,21 @@
 
       password = 12345678
 
-* 是否开启 UDP 转发
+* 是否开启 UDP 转发，默认禁用
 
       # 开启转发
       udp_relay = enable
       # 禁用转发
       udp_relay = disable
+
+* 是否将该代理服务器流量计入总网速（状态栏显示的实时网速）
+
+      # 不计入总网速
+      ignore_traffic = true
+      # 计入总网速
+      ignore_traffic = false
+
+      未设定该值的默认状态：如果服务器地址为 127.0.0.1，则不计入总网速，否则计入总网速
 
 #### socks5
 

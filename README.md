@@ -129,6 +129,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.48  
+实时网速不统计本地代理的流量
 * 0.5.47  
 优化 Dashboard 显示的统计信息
 * 0.5.45  
