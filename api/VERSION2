@@ -1,8 +1,8 @@
 {
   "code": 0,
-  "version": "0.5.45",
-  "build": "564",
+  "version": "0.5.48",
+  "build": "572",
   "notes": "1. Show udp peer information\n2. Add recently completed list\n3. Fix crashes and improve performance",
-  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.45/Reborn.zip",
-  "force": true
+  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.48/Reborn.zip",
+  "force": false
 }
