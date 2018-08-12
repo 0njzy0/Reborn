@@ -1,6 +1,7 @@
 # Reborn
 
-**注意 0.5.3 版本重写了配置规则，如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./discarded/v1/README.md)**
+**注意 0.5.0 版本开始使用了新的配置格式，如果使用的是 0.5.0 之前版本的，请参考[旧版使用说明](./discarded/v1/README.md)**
+
 ## 功能介绍
 
 Reborn 是一款 macOS 上的透明代理
@@ -10,14 +11,11 @@ Reborn 是一款 macOS 上的透明代理
 * DNS 解析对 CDN 友好
 * 可以查看所有经过 Reborn 转发的连接
 
-
 ## 流量监控功能
 
 流量监控功能默认关闭，如果需要开启，请在 Preferences 中打开相应的设置。  
 可以设置是否进行网络信息统计、是否在状态栏显示实时网速、状态栏是否使用窄模式。  
 ![perferences](./image/5.png)
-
-
 
 * 状态栏显示实时网速  
   - 宽模式 ![statusbar](./image/4.png) 
@@ -31,7 +29,6 @@ Reborn 是一款 macOS 上的透明代理
     ![active](./image/2.png)
   - 最近完成的连接
   - 所有连接信息
-
 
 ## 注意事项
 
@@ -56,7 +53,6 @@ https://github.com/langyanduan/Reborn/blob/master/v2/DETAIL.md
 **基础配置模版**
 
 https://github.com/langyanduan/Reborn/blob/master/v2/template.conf
-
 
 **下载地址**
 
@@ -129,6 +125,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/MacOS/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.50  
+修复配置冲突时的解析异常  
 * 0.5.48  
 实时网速不统计本地代理的流量
 * 0.5.47  
