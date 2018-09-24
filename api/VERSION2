@@ -1,8 +1,8 @@
 {
   "code": 0,
-  "version": "0.5.50",
-  "build": "581",
-  "notes": "1. Fix configuration parser",
-  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.50/Reborn.zip",
+  "version": "0.5.53",
+  "build": "588",
+  "notes": "1. Add support for xchacha20-ietf-poly1305\n2. Keep dashboard window always on top",
+  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.53/Reborn.zip",
   "force": false
 }

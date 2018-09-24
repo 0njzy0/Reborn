@@ -69,6 +69,7 @@
       method = aes-128-gcm
       method = aes-256-gcm
       method = chacha20-ietf-poly1305
+      method = xchacha20-ietf-poly1305
 
 * 密码
 
