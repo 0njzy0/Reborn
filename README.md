@@ -41,7 +41,7 @@ Reborn 是一款 macOS 上的透明代理
 最后说明一下，内置了 crash 上报会上传到 hockeyapp 和版本升级检测的，没有其他额外的网络功能了。
 
 
-**希望碰到图标自动变灰（服务挂了）的情况能够反馈下如何出现的，比如访问某个网站，使用了某个工具，日志文件在 `~/Library/Application Support/Reborn/XLogs` 目录下**
+**希望碰到图标自动变灰（服务挂了）的情况能够反馈下如何出现的，比如访问某个网站，使用了某个工具，日志文件在 `~/Library/Application Support/Reborn/Logs` 目录下**
 
 ## 导航
 
@@ -120,6 +120,8 @@ PROCESS, ss-local, DIRECT
 执行脚本 `Reborn.app/Contents/Resources/Uninstall.sh` 后，直接删除 Reborn.app 即可
 
 ## 更新记录
+* 0.5.60  
+支持从文件中读取**组**规则. 优化网络统计功能.
 * 0.5.53  
 新增对 xchacha20-ietf-poly1305 算法的支持. Dashboard 窗口置顶.  
 * 0.5.50  

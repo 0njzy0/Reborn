@@ -9,7 +9,7 @@
 * 规则组: GROUP.groupname
 * 规则文件: FILE.filename
 
-除进行域名匹配以外，配置文件大小写敏感。
+除进行域名匹配以外，配置文件大小写敏感。
 
 关于系统的网络配置问题。reborn 启动的时候会创建一个独立网络服务，之后的DNS、系统代理会配置在该服务上，不会影响到其他的服务。
 
@@ -17,16 +17,18 @@
 
 后续会开放配置，现在不需要填这块区域
 
+* IPv4/IPv6
+
 ### 代理服务器配置
 
 头部定义
 
-* 默认代理  
+* 默认代理
 
       [PROXY]
 
-* 命名代理  
-  `DIRECT`、`REJECT`、`PROXY` 为保留关键字，不允许作为名称。  
+* 命名代理
+  `DIRECT`、`REJECT`、`PROXY` 为保留关键字，不允许作为名称。
   比如定义一个名为 `us` 的代理服务器，可以按照如下格式：
 
       [PROXY.us]
@@ -42,7 +44,7 @@
       server = yourserver.com
       server = 133.29.14.53
 * 端口号
-      
+
       port = 8388
 
 ---
@@ -99,7 +101,7 @@
 
 ### 路由规则
 
-适用于 `[RULES]` 和 `[DNS-RULES]`，一行表示一条规则，格式如下  
+适用于 `[RULES]` 和 `[DNS-RULES]`，一行表示一条规则，格式如下
 
 * [组策略], 规则类型, 规则内容, 路由策略
 * FINAL, 路由策略. 当所有规则都不匹配时，将使用 FINAL 定义的路由策略
@@ -107,7 +109,7 @@
 #### 组策略 - 可选项
 
 * GROUP
-* FILE  暂不支持
+* FILE
 
 #### 规则类型
 
@@ -121,14 +123,19 @@
 
 不使用组策略时，该值为当前规则类型值
 
-当使用组策略时，该值为组名, 即 `[GROUP.dns-pollution]` 中的 `dns-pollution`，组策略中的每一行都需要符合当前规则类型
+当使用组策略时，该值为组名, 即: 
+
+* `[GROUP.dns-pollution]` 中的 `dns-pollution`，组策略中的每一行都需要符合当前规则类型
+* `[FILE.ad-domain]` 中的 `ad-domain`，组策略中的每一行都需要符合当前规则类型
+
+#####
 
 #### 路由策略
 
 * DIRECT
 * REJECT
 * PROXY
-* 服务器名，具体就是指 `[PROXY.us]` 中的 `us`  
+* 服务器名，具体就是指 `[PROXY.us]` 中的 `us`
 
 示例:
 
@@ -146,7 +153,7 @@
 
 ### DNS 配置
 
-* 本地 dns 服务器  
+* 本地 dns 服务器
   `system` 表示使用系统默认服务器, 自定义服务器采用 `ip:port` 格式, 如果不写端口号则默认使用 53 端口。如果有多个 dns 服务器，使用 `,` 分割，具体示例如下：
 
       server = system
@@ -157,7 +164,7 @@
       server = 114.114.114.114:53, 119.29.29.29:53
 
 
-* 远程 dns 服务器  
+* 远程 dns 服务器
   使用 `ip:port` 格式，不支持多个服务器，不能缺省端口号
 
       remote = 8.8.8.8:53
@@ -215,6 +222,9 @@ GROUP, DOMAIN, china500, DIRECT
 # 使用规则组 ad, 该组内的域名(域名后缀匹配)拒绝连接
 GROUP, DOMAIN-SUFFIX, ad, REJECT
 
+# 使用文件规则组 ad-domain，该组内的域名(域名后缀匹配)拒绝连接
+FILE, DOMAIN-SUFFIX, ad-domain, REJECT
+
 # 进程名为 ss-local 的进程使用直接规则
 PROCESS, ss-local, DIRECT
 
@@ -240,6 +250,8 @@ GEOIP, US, us
 # 未比配到上述规则，使用 PROXY 代理服务器向远程 dns 服务器查询域名地址
 FINAL, PROXY
 
+# 规则组
+# 一行对应一个 IP-CIDR 或 DOMAIN
 [GROUP.chinaip]
 1.0.1.0/24
 1.0.2.0/23
@@ -259,4 +271,13 @@ ad.baidu.com
 4.36.66.178
 8.7.198.45
 23.89.5.60
+
+# 文件组
+# 文件的内容写法跟 GROUP 格式一致，一行对应一个 IP-CIDR 或 DOMAIN
+[FILE.ad-domain]
+# 相对路径
+path = ./subconf/ad-domain.txt
+# 或者可以用绝对路径，下面两种都可以
+# path = /Users/yourname/somewhere/ad-domain.txt
+# path = ~/somewhere/ad-domain.txt
 ```

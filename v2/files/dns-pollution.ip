@@ -1,29 +1,6 @@
-[PROXY]
-type = shadowsocks
-server = yourserver.com
-port = 8388
-method = rc4-md5
-password = password
-udp_relay = disable
-
-[RULES]
-GEOIP, CN, DIRECT
-FINAL, PROXY
-
-[DNS]
-server = system
-remote = 8.8.8.8:53
-
-[DNS-RULES]
-GROUP, IP-CIDR, dns-pollution, PROXY
-GEOIP, CN, DIRECT
-FINAL, PROXY
-
-# 如果希望采用文件组的方式引入, 可以参考 template-with-file-rule.conf 中的写法
-
 # DNS cache pollution
 # https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93
-[GROUP.dns-pollution]
+
 4.36.66.178
 8.7.198.45
 23.89.5.60
