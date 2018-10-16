@@ -1,8 +1,8 @@
 {
   "code": 0,
-  "version": "0.5.3",
-  "build": "533",
-  "notes": "Support for monitoring all network requests",
-  "url": "https://github.com/langyanduan/Reborn",
+  "version": "0.5.60",
+  "build": "601",
+  "notes": "1. Support for reading rule groups from files\n2. Optimize performance",
+  "url": "https://github.com/langyanduan/Reborn/releases/download/0.5.60/Reborn.zip",
   "force": true
 }
